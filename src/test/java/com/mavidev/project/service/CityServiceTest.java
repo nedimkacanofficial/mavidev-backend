@@ -31,17 +31,17 @@ public class CityServiceTest {
 
     @Test
     public void testGetAllCities() {
-        // Mocking repository behavior
+        // Mocking repository behavior Arrange (Hazırlık)
         List<City> mockCityList = new ArrayList<>();
         mockCityList.add(new City(1L, "City1"));
         mockCityList.add(new City(2L, "City2"));
 
         when(cityRepository.findAll()).thenReturn(mockCityList);
 
-        // Testing service method
+        // Testing service method Action(Aksiyon)
         List<CityResponseDTO> result = cityService.getAll();
 
-        // Assertions
+        // Assertions (İddia)
         assertEquals(2, result.size());
         assertEquals("City1", result.get(0).getName());
         assertEquals("City2", result.get(1).getName());
@@ -126,14 +126,14 @@ public class CityServiceTest {
 
     @Test
     public void testDeleteCityById() {
-        // Mocking repository behavior
+        // Mocking repository behavior Arrange
         Long cityId = 1L;
         City existingCity = new City(cityId, "CityToDelete");
 
         when(cityRepository.findById(cityId)).thenReturn(Optional.of(existingCity));
         when(cityRepository.save(any(City.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-        // Testing service method
+        // Testing service method Action
         CityResponseDTO result = cityService.deleteById(cityId);
 
         // Assertions
