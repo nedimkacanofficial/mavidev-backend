@@ -1,0 +1,26 @@
+# Server configuration
+server:
+  port: 8080
+# Logging configuration
+logging:
+  level:
+    root: info
+# Database configuration
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/mavidevDB
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+        format_sql: true
+# OpenAPI configuration localhost:8080/mavidev-swagger-ui
+springdoc:
+  swagger-ui:
+    path: /mavidev-swagger-ui
