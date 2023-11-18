@@ -1,0 +1,15 @@
+# Database configuration
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://postgres:56FF1*2Aa1Ag3*31C4Cg63Cc6-C**3A5@roundhouse.proxy.rlwy.net:16919/railway
+    username: postgres
+    password: 56FF1*2Aa1Ag3*31C4Cg63Cc6-C**3A5
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+        format_sql: true
