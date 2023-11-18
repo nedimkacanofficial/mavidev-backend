@@ -12,9 +12,11 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("http://ndmkcn.epizy.com").allowedMethods("GET", "POST", "PUT", "DELETE").allowedHeaders("*");
+                registry.addMapping("/**")
+                        .allowedOrigins("*") // Herkese izin ver
+                        .allowedMethods("GET", "POST", "PUT", "DELETE")
+                        .allowedHeaders("*");
             }
         };
     }
 }
-
