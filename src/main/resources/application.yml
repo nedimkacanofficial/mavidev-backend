@@ -1,6 +1,6 @@
 # Server configuration
 server:
-  port: 443
+  port: 8080
 # Logging configuration
 logging:
   level:
