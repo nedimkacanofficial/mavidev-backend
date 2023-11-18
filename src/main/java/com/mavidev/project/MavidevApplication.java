@@ -6,7 +6,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@OpenAPIDefinition(info = @Info(title = "Mavidev App", version = "1.0.0", description = "This is a mavidev app swagger documentation."))
+@OpenAPIDefinition(
+    info = @Info(title = "Mavidev App", version = "1.0.0", description = "This is a mavidev app swagger documentation."),
+    servers = {
+        @Server(url = "http://mavidev-backend-production.up.railway.app", description = "Backend Server URL"),
+        @Server(url = "*", description = "Wildcard for Frontend URL")
+    }
+)
 public class MavidevApplication {
 
     public static void main(String[] args) {
